@@ -1,0 +1,68 @@
+// ===========================================
+// RESPONSIVE - Media Queries
+// ===========================================
+
+@use "variables" as *;
+
+// Small devices and up
+@media (min-width: $breakpoint-sm) {
+  .landing__form {
+    flex-direction: row;
+    justify-content: center;
+    max-width: none;
+  }
+}
+
+// Medium devices and down
+@media (max-width: $breakpoint-md) {
+  .hero {
+    padding-top: 100px;
+    text-align: center;
+
+    &__content {
+      margin: 0 auto;
+    }
+
+    &__text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__actions {
+      justify-content: center;
+    }
+  }
+
+  .nav {
+    display: none; // Mobile nav would be added later
+  }
+
+  // About page responsive
+  .faq__question {
+    font-size: 1rem;
+    padding: 1rem 0;
+  }
+
+  .prep-tips {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    &__card {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .prep-tips {
+    grid-template-columns: 1fr;
+  }
+}
