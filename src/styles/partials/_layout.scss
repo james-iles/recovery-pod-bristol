@@ -50,6 +50,20 @@
     &:hover {
       color: $color-primary;
     }
+
+    &--cta {
+      border: 1px solid $color-secondary;
+      color: $color-secondary;
+      display: inline-block;
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $border-radius;
+      transition: background-color $transition-slow;
+
+      &:hover {
+        color: $off-white;
+        background-color: $color-secondary;
+      }
+    }
   }
 }
 
