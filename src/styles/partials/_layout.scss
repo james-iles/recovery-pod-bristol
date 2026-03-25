@@ -2,7 +2,7 @@
 // LAYOUT - Page Structure & Sections
 // ===========================================
 
-@use 'variables' as *;
+@use "variables" as *;
 
 // Header
 .header {
@@ -12,7 +12,7 @@
   right: 0;
   z-index: 100;
   padding: $spacing-sm 0;
-  background-color: rgba($white, 0.95);
+  // background-color: rgba($white, 0.95);
   backdrop-filter: blur(10px);
   transition: box-shadow $transition-base;
 
@@ -181,4 +181,3 @@
     }
   }
 }
-
