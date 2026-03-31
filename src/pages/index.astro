@@ -1,91 +1,307 @@
 ---
-import LayoutMinimal from '../layouts/LayoutMinimal.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<LayoutMinimal
-  title="Recovery Pod Bristol | Coming Soon"
-  description="Bristol's premium contrast therapy experience. Coming Soon."
-  canonical="https://recoverypodbristol.com/waitlist">
+<Layout
+  title="Recovery Pod Bristol | Sauna and Cold Plunge Contrast Therapy"
+  description="Experience the benefits of contrast therapy at Recovery Pod Bristol. Our Swedish sauna and cold plunge facilities, designed for optimal recovery and wellness."
+  canonical="https://recoverypodbristol.com/">
 
-    <main class="landing">
-      <div class="landing__content">
-        <!-- Logo Icon -->
-        <div class="landing__icon">
-          <i class="fa-solid fa-spa"></i>
-        </div>
+  <Fragment slot="head">
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "HealthAndBeautyBusiness",
+        "name": "Recovery Pod",
+        "description": "Premium sauna and cold plunge contrast therapy in Bristol. Swedish sauna, ice baths, and recovery sessions.",
+        "url": "https://recoverypodbristol.com/",
+        "logo": "https://recoverypodbristol.com/assets/images/logo.png",
+        "image": "https://recoverypodbristol.com/assets/images/og-image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bristol",
+          "addressRegion": "Bristol",
+          "addressCountry": "GB"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 51.4545,
+          "longitude": -2.5879
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Bristol"
+        },
+        "sameAs": ["https://www.instagram.com/therecoverypodcontrasttherapy"],
+        "priceRange": "££"
+      })}
+    </script>
+  </Fragment>
 
-        <!-- Title -->
-        <h1 class="landing__title">Recovery Pod</h1>
-        <p class="landing__tagline">Heat. Cold. Heal.</p>
-
-        <!-- Description -->
-        <p class="landing__text">
-          Bristol's premium contrast therapy experience. Swedish sauna and cold
-          plunge sessions designed to boost recovery, reduce inflammation, and
-          elevate your wellbeing. Coming soon.
-        </p>
-
-        <!-- Features -->
-        <div class="landing__features">
-          <div class="landing__feature">
-            <i class="fa-solid fa-fire landing__feature-icon"></i>
-            <span>Swedish Sauna</span>
+    <main class="page">
+      <section class="hero">
+        <div class="container">
+          <div class="hero__content hero__content--centered">
+            <span class="hero__tagline">Contrast Therapy</span>
+            <h1 class="hero__title">
+              The Power of <span>Heat</span> &amp; <span>Cold</span>
+            </h1>
+            <p class="hero__text">
+              Alternating between sauna heat and cold plunge activates your
+              body's natural recovery systems. The contrast drives circulation,
+              reduces inflammation, relieves muscle soreness, and leaves you
+              feeling deeply restored.
+            </p>
+            <a href="/booking" class="btn btn--primary">
+              Book a Session
+            </a>
           </div>
-          <div class="landing__feature">
-            <i class="fa-solid fa-snowflake landing__feature-icon"></i>
-            <span>Cold Plunge</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Why Contrast Therapy?</h2>
+            <p class="section__subtitle">
+              Science-backed benefits for body and mind
+            </p>
           </div>
-          <div class="landing__feature">
-            <i class="fa-solid fa-heart-pulse landing__feature-icon"></i>
-            <span>Recovery Tools</span>
+
+          <div class="benefits-grid">
+            <div class="card">
+              <div class="card__image">
+                  <img src="/assets/images/sauna-inside.jpeg" alt="Inside the Recovery Pod sauna" />
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">Swedish Sauna</h3>
+                <p class="card__text">
+                  Traditional dry heat between 80&ndash;100&deg;C relaxes muscles, promotes sweating, supports mental
+                  wellbeing and triggers the release of endorphins. Regular sauna use supports cardiovascular health,
+                  improves sleep quality, and helps the body detoxify naturally.
+                </p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card__image">
+                  <img src="/assets/images/ice-2.jpeg" alt="Cold plunge pools at Recovery Pod Bristol" />
+              </div>
+              <div class="card__content">
+                <h3 class="card__title">Cold Plunge</h3>
+                <p class="card__text">
+                  Immersion in cold water triggers vasoconstriction, reduces inflammation, and stimulates the
+                  vagus nerve. Cold exposure builds mental resilience, boosts metabolism, and accelerates
+                  muscle recovery after exercise. We recommend 4&ndash;6&deg;C for men and 10&ndash;12&deg;C for women.
+                  <br />
+                  &ldquo;Women&rsquo;s physiological response to extreme cold is often more intense (vasoconstriction, stress response)
+                  than men&rsquo;s, so moderate cold still gives the desired effect without overwhelming stress.&rdquo; (Dr. Stacy Sims)
+                </p>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- Email Signup -->
-        <form
-          class="landing__form"
-          id="signup-form"
-          name="waitlist"
-          method="POST"
-          data-netlify="true"
-        >
-          <input type="hidden" name="form-name" value="waitlist" />
-          <input
-            type="email"
-            name="email"
-            class="landing__input"
-            placeholder="Enter your email"
-            required
-            aria-label="Email address"
-          />
-          <button type="submit" class="btn btn--secondary landing__submit">
-            Join Waitlist
-          </button>
-        </form>
-        <p class="landing__note">
-          Be the first to know when we launch. No spam, ever.
-        </p>
+      <section class="section section--ice">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">The Space</h2>
+            <p class="section__subtitle">A look inside Recovery Pod</p>
+          </div>
 
-        <!-- Social Links -->
-        <div class="landing__social">
-          <a
-            href="https://www.instagram.com/therecoverypodcontrasttherapy"
-            class="landing__social-link"
-            aria-label="Follow us on Instagram"
-          >
-            <i class="fa-brands fa-instagram"></i>
-          </a>
+          <div class="gallery">
+            <div class="gallery__item">
+              <img src="/assets/images/general-decor.jpeg" alt="Recovery Pod Bristol Interior" />
+            </div>
+            <div class="gallery__item">
+                <img src="/assets/images/ice-1.jpeg" alt="Cold plunge pool at Recovery Pod" />
+            </div>
+            <div class="gallery__item">
+                <img src="/assets/images/sauna-and-ice.jpeg" alt="Sauna and cold plunge at Recovery Pod Bristol" />
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Footer -->
-      <footer class="landing__footer">
-        <p>&copy; 2025 Recovery Pod. All rights reserved.</p>
-        <p>
-          Calmly crafted by
-          <a href="https://jamesiles.uk" target="_blank">James</a>
-        </p>
-      </footer>
+      <section class="section">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">How to Prepare</h2>
+            <p class="section__subtitle">
+              Everything you need to know before your visit
+            </p>
+          </div>
+
+          <div class="prep-tips">
+            <div class="prep-tips__card">
+              <div class="prep-tips__icon">
+                <i class="fa-solid fa-shirt"></i>
+              </div>
+              <h3 class="prep-tips__title">Swim Attire</h3>
+              <p class="prep-tips__text">
+                Arrive in suitable swim and sauna attire. There will be space to hang
+                your clothes, change robes, and store belongings during your session.
+              </p>
+            </div>
+
+            <div class="prep-tips__card">
+              <div class="prep-tips__icon">
+                <i class="fa-solid fa-bath"></i>
+              </div>
+              <h3 class="prep-tips__title">Bring Towels</h3>
+              <p class="prep-tips__text">
+                Bring two towels with you on your visit. One to dry yourself after your session,
+                and a towel to sit on inside the sauna.
+              </p>
+            </div>
+
+            <div class="prep-tips__card">
+              <div class="prep-tips__icon">
+                <i class="fa-solid fa-bottle-water"></i>
+              </div>
+              <h3 class="prep-tips__title">Water Bottles</h3>
+              <p class="prep-tips__text">
+                Bring a water bottle &mdash; you will be able to fill this on
+                site from within the Pod. Staying hydrated is essential during contrast therapy.
+              </p>
+            </div>
+
+            <div class="prep-tips__card">
+              <div class="prep-tips__icon">
+                <i class="fa-solid fa-shower"></i>
+              </div>
+              <h3 class="prep-tips__title">Shower Before Arrival</h3>
+              <p class="prep-tips__text">
+                Please shower before you arrive. This keeps the water clean and
+                enhances the experience for everyone.
+              </p>
+            </div>
+
+            <div class="prep-tips__card">
+              <div class="prep-tips__icon">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <h3 class="prep-tips__title">Bluetooth Speaker</h3>
+              <p class="prep-tips__text">
+                A bluetooth speaker is available for use during your session. You are able to bring your phone
+                into the Pod with you, but chargers, battery packs and cables should be left outside.
+              </p>
+            </div>
+
+            <div class="prep-tips__card">
+              <div class="prep-tips__icon">
+                <i class="fa-solid fa-droplet"></i>
+              </div>
+              <h3 class="prep-tips__title">Essential Oils</h3>
+              <p class="prep-tips__text">
+                Oils are provided for use in the sauna to add a relaxing aroma to your session. You are also welcome to
+                bring your own essential oils. Please follow the instructions on usage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--ice">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Frequently Asked Questions</h2>
+            <p class="section__subtitle">Got questions? We have answers.</p>
+          </div>
+
+          <div class="faq">
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">What is contrast therapy?</summary>
+              <div class="faq__answer">
+                <p>
+                  Contrast therapy involves alternating between hot (sauna) and
+                  cold (plunge pool) exposure. This cycle of heating and cooling
+                  stimulates blood flow, reduces muscle soreness, and promotes
+                  overall recovery. A typical session involves multiple rounds
+                  of heat and cold.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">How long is a session?</summary>
+              <div class="faq__answer">
+                <p>
+                  Sessions typically last 60 minutes, giving you time for
+                  multiple rounds of sauna and cold plunge with rest periods in
+                  between. We recommend 3&ndash;4 rounds for the best results.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">
+                Is cold plunge safe for everyone?
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  Cold plunge is generally safe for healthy individuals.
+                  However, if you have a heart condition, are pregnant, have
+                  Raynaud's disease, or have any medical concerns, please
+                  consult your doctor before your first session. We are always
+                  happy to discuss any questions you may have.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">
+                Do I need to book in advance?
+              </summary>
+              <div class="faq__answer">
+                <p>
+                  Yes, we operate on a booking-only basis to ensure a relaxed,
+                  uncrowded experience. You can book your session through our
+                  online booking page.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">What should I bring?</summary>
+              <div class="faq__answer">
+                <p>
+                  Bring swim attire, two towels (one to dry off and one to sit on), a water
+                  bottle, and any toiletries you need for after your session. We
+                  offer showers and a changing area if needed.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">Where are you located?</summary>
+              <div class="faq__answer">
+                <p>
+                  We are based in Bristol and can be found on site at Valesco Fitness Collective,
+                  Brislington. Our address and directions will also be shared on your booking confirmation.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Ready to Feel the Difference?</h2>
+            <p class="section__subtitle">
+              Book your first contrast therapy session today.
+            </p>
+            <a href="/booking" class="btn btn--primary btn--large">
+              Book a Session
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
-</LayoutMinimal>
+</Layout>
