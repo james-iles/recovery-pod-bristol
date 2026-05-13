@@ -51,6 +51,14 @@
       color: $color-primary;
     }
 
+    &--find-us {
+      color: $color-primary;
+
+      &:hover {
+        color: darken($color-primary, 15%);
+      }
+    }
+
     &--cta {
       border: 1px solid $color-secondary;
       color: $color-secondary;
@@ -69,11 +77,39 @@
 
 // Hero Section
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: $spacing-2xl 0;
   background: linear-gradient(135deg, $off-white 0%, $ice-blue 100%);
+  overflow: hidden;
+
+  &__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    z-index: 0;
+
+    @media (prefers-reduced-motion: reduce) {
+      display: none;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
 
   &__content {
     max-width: 700px;
@@ -86,12 +122,13 @@
     font-size: $font-size-sm;
     font-weight: $font-weight-medium;
     color: $orange-warm;
-    background-color: rgba($orange-warm, 0.1);
+    background-color: rgba($orange-warm, 0.15);
     border-radius: $border-radius-full;
   }
 
   &__title {
     margin-bottom: $spacing-md;
+    color: $off-white;
 
     span {
       color: $color-primary;
@@ -100,7 +137,7 @@
 
   &__text {
     font-size: $font-size-lg;
-    color: $color-text-light;
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: $spacing-lg;
     max-width: 550px;
   }
