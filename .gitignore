@@ -20,5 +20,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# video assets (too large for git — host via CDN)
+public/assets/videos/
+
 # jetbrains setting folder
 .idea/
